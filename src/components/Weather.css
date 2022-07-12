@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+
+.weather-icon-container img {
+    
+    width: 60px;
+    height: auto;
+}
+
+.weather-info-container {
+    font-family: 'Open Sans', sans-serif;
+    padding: 15px;
+}
+
+.weather-info-container  h1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+.weather-info-container h2 {
+    font-size: 14px;
+    font-weight: 400;
+    
+}
