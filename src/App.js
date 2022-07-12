@@ -6,8 +6,8 @@ import WeatherApp from './Apps/WeatherApp';
 
 function App() {
 
-	const [lat, setLat] = useState("");
-	const [long, setLong] = useState("");
+	const [lat, setLat] = useState(undefined);
+	const [long, setLong] = useState(undefined);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -21,12 +21,13 @@ function App() {
 					console.log(error);
 				});
 		}
+
 		fetchData();
 	}, [])
 
   return (
 	<div className="App">
-		{(typeof lat != 'undefined' || typeof long != 'undefined') ? (<WeatherApp lat={lat} long={long}/>) : (<div>Loading...</div>)}
+		{(typeof lat != 'undefined' && typeof long != 'undefined') ? (<WeatherApp lat={lat} long={long}/>) : (<div>Loading...</div>)}
 	</div>
   );
 }

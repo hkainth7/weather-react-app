@@ -10,15 +10,17 @@ function WeatherApp({lat, long}) {
 		
 		const fetchData = async () => {
 
+			if (lat && lat.toString().length > 0 && long && long.toString().length > 0){
 
-			await fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${long}&aqi=no`)
-				.then(res => res.json())
-				.then(result => {
-					setData(result);
+				await fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${long}&aqi=no/`)
+					.then(res => res.json())
+					.then(result => {
+						setData(result);
 					})
-				.catch(error => {
-					console.log(error);
+					.catch(error => {
+						console.log(error);
 					});
+			} else setData({});
 
 		}
 		fetchData();
