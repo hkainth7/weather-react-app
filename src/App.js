@@ -27,6 +27,7 @@ function App() {
 
   return (
 	<div className="App">
+		{/* Contributed logical fix by Shawn Norman:  https://github.com/shnrmn*/}
 		{(typeof lat != 'undefined' && typeof long != 'undefined') ? (<WeatherApp lat={lat} long={long}/>) : (<div>Loading...</div>)}
 	</div>
   );
