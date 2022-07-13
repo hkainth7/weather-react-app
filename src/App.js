@@ -11,15 +11,10 @@ function App() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			await fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.REACT_APP_LOCATION_KEY}`, {method:'POST', contentType:'application/json'})
-				.then(res => res.json())
-				.then(result => {
-					setLat(result.location.lat);
-					setLong(result.location.lng);
-					})
-				.catch(error => {
-					console.log(error);
-				});
+			navigator.geolocation.getCurrentPosition(position => {
+				setLat(position.coords.latitude);
+				setLong(position.coords.longitude);
+			})
 		}
 
 		fetchData();
