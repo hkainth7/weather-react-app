@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
-import WeatherApp from './Apps/WeatherApp';
+import WeatherApp from './Widget/WeatherApp';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
 		}
 
 		fetchData();
-	}, [])
+	}, []);
 
   return (
 	<div className="App">
